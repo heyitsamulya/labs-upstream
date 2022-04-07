@@ -2,15 +2,15 @@
  * CS 152, Spring 2022
  * Lab #2 Deliverables
  *
- * Name: add your name here  YOU MUST FILL IN THIS INFORMATION
+ * Name: Amulya Agrawal  YOU MUST FILL IN THIS INFORMATION
  *
- * Sources used:
+ * Sources used: None
  *   List all sources used to complete this assignment. Include a
  *   URL for internet resources. You do not need to include the lab
  *   write-up, course textbooks, or man pages. If you did not use
  *   any sources, write the word "None".  YOU MUST COMPLETE THIS SECTION.
  *                                                                                                                                          
- * People consulted:
+ * People consulted: None
  *   List anyone you discussed this assignment with, including your
  *   classmates, friends, and Harper Tutors.  You do not need to list
  *   the instructors or the teaching assistants.  If you did not consult
@@ -47,10 +47,12 @@ double compute_div_fraction(int x, int y)
     // Ensure that that inputs have positive values
     assert(x > 0);
     assert(y > 0);
-
-    // YOUR CODE HERE
+    printf("x:{%d}, y:{%d}\n",x,y);
     // Replace 0.0 with an appropriate return value
-    return 0.0;
+    // Here, I am using double because the value should not return a whole
+    // integer. I divided x by y and then subtract it from x divided by y to
+    // return the desired value, as seen in the example.
+    return (((double) x)/y - x/y);
 }
 
 
@@ -68,12 +70,12 @@ double compute_div_fraction(int x, int y)
  *
  * Returns: true if x is in the range, false otherwise.
  */
+// Here, this function will return true if it is between the lower and upper
+// bounds, and it must fit the requirements for in_inclusive. Otherwise, it
+// will return false.
 bool in_range_1(double lb, double ub, double x, bool is_inclusive) {
-    // YOUR CODE HERE
-    // Replace false with an appropriate return value
-    return false;
+    return (x > lb && x < ub) || (is_inclusive && (x == lb || x == ub));
 }
-
 
 /* Task 3
  *
@@ -89,10 +91,27 @@ bool in_range_1(double lb, double ub, double x, bool is_inclusive) {
  *
  * Returns: true if x is in the range, false otherwise.
  */
+// if x is greater than lb, return true
+// if x is less than ub, return true
+// if x is not inclusive by not equaling the lb, return false
+// if x is not inclusive by not equaling the ub, return false
 bool in_range_2(double lb, double ub, double x, bool is_inclusive) {
-    // YOUR CODE HERE
-    // Replace false with an appropriate return value
-    return false;
+    if {
+        (x > lb)
+        return true;
+    }
+    if {
+        (x < ub)
+        return true;
+    }
+    else if {
+        (is_inclusive (x != lb))
+        return false;
+    }
+    else if {
+        (is_inclusive (x != ub))
+        return false;
+    }
 }
 
 /* Task 4
@@ -108,13 +127,12 @@ bool in_range_2(double lb, double ub, double x, bool is_inclusive) {
  *
  * Returns: clipped value
  */
-
+// if x is less than lb, return lb
+// if x is greater than ub, return ub
+// if these conditions are not true, return false
 double clip(double x, double lb, double ub) {
-    // YOUR CODE HERE
-    // Replace 0.0 with an appropriate return value
-    return 0.0;    
+    return (x < lb) ? lb : (x > ub) ? ub : x;
 }
-
 
 /* Task 5
  *
@@ -129,12 +147,14 @@ double clip(double x, double lb, double ub) {
  *
  * Returns: 0 or 1.
  */
+// if the value at a choice_bit is 0, move 1 digit and return that value
+// if the value at a choice_bit is 1, move 2 digits and return that value
+
+//  I understand the logic for this question, but I am confused on how to
+// write it without using conditionals. This is my best try at it.
+
+// here is another potential solution to solve this task.
 unsigned int extract_flag(unsigned int data, int choice_bit) {
-    // Check that the choice bit is within the acceptable range
     assert(choice_bit >= 2 && choice_bit < 32);
-
-    // YOUR CODE HERE
-    // Replace 0 with an appropriate return value
-    return 0;
+    return ((data >> choice_bit - 1 - ((data >> choice_bit) & 1) & 1))
 }
-
