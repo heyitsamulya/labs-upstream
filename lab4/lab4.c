@@ -1,14 +1,14 @@
 /*
  * Lab #4 Deliverables
  *
- * Name: add your name here
- *   YOU MUST FILL IN YOUR NAME AND THEN REMOVE THIS COMMENT.
+ * Name: Amulya Agrawal
+ * 
  *
- * Sources used:
- *   YOU MUST COMPLETE THIS SECTION
+ * Sources used: NONE
+ * 
  *
- * People consulted:
- *   YOU MUST COMPLETE THIS SECTION
+ * People consulted: NONE
+ * 
  *
  */
 
@@ -37,12 +37,17 @@
 bool match_at_index(char *test_str, char *target, int i) {
     // The target is not an empty string
     assert(target[0] != '\0');
-
-    // Your code here
-    // Replace false with a suitable return value
-    return false;
+    test_str = (char*)malloc(sizeof(char) * i);
+    i = 0;
+    while(test_str[i] != '\0') {
+        if (&target[i] == &test_str[i]) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
-
 
 /*
  * Task 2
@@ -64,11 +69,17 @@ bool match_at_index(char *test_str, char *target, int i) {
 int count_occurrences(char *test_str, char *target) {
     // The target is not an empty string.
     assert(target[0] != '\0');
-
-    // Your code here
-    // Replace 0 with a suitable return value
-    return -1;
-}
+    int i = 0;
+    int len = strlen(test_str);
+    test_str = (char*)malloc(sizeof(char) * len);
+    target = (char*)malloc(sizeof(char) * len);
+    while(test_str[i] != '\0') {
+        i++;
+        if (strcmp(&target[i], test_str)) {
+            i++;
+        }
+        return i;
+    }
 
 /*
  * Task 3
@@ -90,10 +101,17 @@ int count_occurrences(char *test_str, char *target) {
 int count_non_overlapping(char *test_str, char *target) {
     // The target is not an empty string.
     assert(target[0] != '\0');
-
-    // Your code here
-    // Replace 0 with a suitable return value
-    return -1;
+    test_str = (char*)malloc(sizeof(char) * len);
+    int i = 0;
+    int len = strlen(test_str);
+    target = (char*)malloc(sizeof(char) * len);
+    while(test_str[i] != '\0') {
+        i++;
+        if (strcmp(&target[i], test_str)) {
+            ((i++)/3);
+        }
+        return i;
+    }
 }
 
 /* Task 4
@@ -115,10 +133,20 @@ int compare_pairs(pair_t *p0, pair_t *p1) {
     // Neither p0 nor p1 is NULL
     assert(p0 != NULL);
     assert(p1 != NULL);
-
-    // Your code here
-    // Replace -1 with a suitable return value
-    return -1;
+    int i = 0;
+    p0 = (v0, v1);
+    p1 = (w0, w1);
+    while (&p0[i] != &p1[i]) {
+        if (&p0[(v0, v1) < &p1[(w0, w1)]]) {
+            return (v0, v1) < 0;
+        }
+        else if (&p0[(v0, v1)] == &p1[(w0, w1)]) {
+            return 0;
+        }
+        else if (&p0[(v0, v1)] > &p1[(w0, w1)]) {
+            return (v0, v1) > 0;
+        }
+    }
 }
 
 
@@ -136,9 +164,14 @@ int compare_pairs(pair_t *p0, pair_t *p1) {
 int find_match(pair_t *pairs[], int N, pair_t *target) {
     assert(N > 0);
     assert(target != NULL);
-
-    // Your code here
-    // Replace -2 with a suitable return value
-    return -2;
+    int i = 0;
+    target = (pair_t*)malloc(sizeof(pair_t) * i);
+    for (size_t i = 0; i < N; i++) {
+        if (&pairs[i], target[i]) {
+            return 0;
+        }
+        else {
+            return -1;
+        }
+    }
 }
-
